@@ -4,11 +4,9 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 const Login = () => {
     return (
-        <SafeAreaView style={styles.container}>
-            <View className=''>
+        <View style={styles.container}>
 
-            </View>
-        </SafeAreaView>
+        </View>
     )
 }
 
@@ -17,6 +15,6 @@ export default Login
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: 'red'
     },
 })
