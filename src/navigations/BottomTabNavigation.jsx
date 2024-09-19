@@ -7,21 +7,28 @@ import SearchScreen from '../screens/SearchScreen';
 import LibraryScreen from '../screens/LibraryScreen';
 import Premium from '../screens/Premium';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useTheme } from 'react-native-paper';
 
 const Tab = createMaterialBottomTabNavigator();
 const BottomTabNavigation = () => {
+    
+    const theme = useTheme();
+    theme.colors.secondaryContainer = 'transperent';
+
     return (
         <NavigationContainer>
             <Tab.Navigator 
                 initialRouteName='Home'
-                activeColor="red"
-                barStyle={{ backgroundColor: 'blue' }}
+                activeColor="white"
+                inactiveColor="#535353"
+                inactiveBackgroundColor="#212121"
+                barStyle={{ backgroundColor: '#212121',opacity:0.8 }}
             >
                 <Tab.Screen name="Home" component={HomeScreen} 
                     options={{
                         tabBarLabel: 'Home',
                         tabBarIcon: ({ color }) => (
-                            <MaterialCommunityIcons name="home" color={color} size={26} />
+                            <MaterialCommunityIcons name="home" color={color} size={30} />
                         ),
                     }}
                 />
@@ -29,7 +36,7 @@ const BottomTabNavigation = () => {
                     options={{
                         tabBarLabel: 'Search',
                         tabBarIcon: ({ color }) => (
-                            <MaterialCommunityIcons name="magnify" color={color} size={26} />
+                            <MaterialCommunityIcons name="magnify" color={color} size={30} />
                         ),
                     }}
                 />
@@ -37,7 +44,7 @@ const BottomTabNavigation = () => {
                     options={{
                         tabBarLabel: 'Library',
                         tabBarIcon: ({ color }) => (
-                            <MaterialCommunityIcons name="library" color={color} size={26} />
+                            <MaterialCommunityIcons name="library" color={color} size={30} />
                         ),
                     }}
                 />
@@ -45,7 +52,7 @@ const BottomTabNavigation = () => {
                     options={{
                         tabBarLabel: 'Premium',
                         tabBarIcon: ({ color }) => (
-                            <MaterialCommunityIcons name="music" color={color} size={26} />
+                            <MaterialCommunityIcons name="music" color={color} size={30} />
                         ),
                     }}
                 />

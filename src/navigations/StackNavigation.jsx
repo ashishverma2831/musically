@@ -13,10 +13,10 @@ const StackNavigation = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name="Home" component={HomeScreen} />
-                <Stack.Screen name="Library" component={LibraryScreen} />
-                <Stack.Screen name="Premium" component={Premium} />
-                <Stack.Screen name="Search" component={SearchScreen} />
+                <Stack.Screen name="Home" component={HomeScreen} options={{headerShown:true}} />
+                <Stack.Screen name="Library" component={LibraryScreen} options={{headerShown:true}} />
+                <Stack.Screen name="Premium" component={Premium} options={{headerShown:true}} />
+                <Stack.Screen name="Search" component={SearchScreen} options={{headerShown:true}} />
             </Stack.Navigator>
         </NavigationContainer>
     )

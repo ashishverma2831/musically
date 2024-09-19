@@ -10,7 +10,6 @@ const ScrollCard = () => {
 const HorizontalScroll = () => {
   return (
     <View>
-      <Text>HorizontalScroll</Text>
       <ScrollView horizontal>
         <ScrollCard/>
         <ScrollCard/>
