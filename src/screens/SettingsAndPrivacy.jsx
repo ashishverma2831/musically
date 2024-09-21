@@ -1,13 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
 
-const Premium = () => {
+const SettingsAndPrivacy = () => {
   return (
-      <Text>Premium</Text>
+    <View>
+      <Text>SettingsAndPrivacy</Text>
+    </View>
   )
 }
 
-export default Premium
+export default SettingsAndPrivacy
 
 const styles = StyleSheet.create({})

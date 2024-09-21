@@ -8,10 +8,10 @@ import DrawerNavigation from './src/navigations/DrawerNavigation'
 
 const App = () => {
   return (
-    <SafeAreaProvider style={styles.container}>
-      <StackNavigation />
-      <DrawerNavigation />
-      <BottomTabNavigation />
+    <SafeAreaProvider>
+      <View style={styles.container}>
+        <BottomTabNavigation />
+      </View>
     </SafeAreaProvider>
   )
 }

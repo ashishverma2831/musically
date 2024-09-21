@@ -7,7 +7,8 @@ import SearchScreen from '../screens/SearchScreen';
 import LibraryScreen from '../screens/LibraryScreen';
 import Premium from '../screens/Premium';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { useTheme } from 'react-native-paper';
+import { Drawer, useTheme } from 'react-native-paper';
+import DrawerNavigation from './DrawerNavigation';
 
 const Tab = createMaterialBottomTabNavigator();
 const BottomTabNavigation = () => {
@@ -23,8 +24,11 @@ const BottomTabNavigation = () => {
                 inactiveColor="#535353"
                 inactiveBackgroundColor="#212121"
                 barStyle={{ backgroundColor: '#212121',opacity:0.8 }}
+                screenOptions={{
+                    headerShown: false,
+                }}
             >
-                <Tab.Screen name="Home" component={HomeScreen} 
+                <Tab.Screen name="Home" component={DrawerNavigation} 
                     options={{
                         tabBarLabel: 'Home',
                         tabBarIcon: ({ color }) => (
@@ -32,7 +36,7 @@ const BottomTabNavigation = () => {
                         ),
                     }}
                 />
-                <Tab.Screen name="Search" component={SearchScreen}
+                <Tab.Screen name="Search" component={DrawerNavigation}
                     options={{
                         tabBarLabel: 'Search',
                         tabBarIcon: ({ color }) => (
@@ -40,7 +44,7 @@ const BottomTabNavigation = () => {
                         ),
                     }}
                 />
-                <Tab.Screen name="Library" component={LibraryScreen}
+                <Tab.Screen name="Library" component={DrawerNavigation}
                     options={{
                         tabBarLabel: 'Library',
                         tabBarIcon: ({ color }) => (
@@ -48,7 +52,7 @@ const BottomTabNavigation = () => {
                         ),
                     }}
                 />
-                <Tab.Screen name="Premium" component={Premium} 
+                <Tab.Screen name="Premium" component={DrawerNavigation} 
                     options={{
                         tabBarLabel: 'Premium',
                         tabBarIcon: ({ color }) => (

@@ -1,13 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
 
-const Premium = () => {
+const ListeningHistory = () => {
   return (
-      <Text>Premium</Text>
+    <View>
+      <Text>ListeningHistory</Text>
+    </View>
   )
 }
 
-export default Premium
+export default ListeningHistory
 
 const styles = StyleSheet.create({})

@@ -4,9 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 const LibraryScreen = () => {
   return (
-    <SafeAreaView>
       <Text>LibraryScreen</Text>
-    </SafeAreaView>
   )
 }
 
