@@ -7,7 +7,7 @@ const ScrollCard = () => {
 </View>
 }
 
-const HorizontalScroll = () => {
+const HorizontalScroll = ({list}) => {
   return (
     <View>
       <ScrollView horizontal>
