@@ -5,15 +5,16 @@ import HomeScreen from '../screens/HomeScreen';
 import LibraryScreen from '../screens/LibraryScreen';
 import Premium from '../screens/Premium';
 import SearchScreen from '../screens/SearchScreen';
-// import { NavigationContainer } from '@react-navigation/native';
 import BottomTabNavigation from './BottomTabNavigation';
 import ListeningHistory from '../screens/ListeningHistory';
 import StackNavigation from './StackNavigation';
+import { NavigationContainer } from '@react-navigation/native';
 
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigation = () => {
     return (
+        <NavigationContainer>
             <Drawer.Navigator screenOptions={{
                 headerShown: true,
                 drawerStyle: {
@@ -23,12 +24,13 @@ const DrawerNavigation = () => {
                 drawerActiveTintColor: 'white',
                 drawerInactiveTintColor: 'white',
             }} >
-                <Drawer.Screen name="Home" component={StackNavigation} />
+                <Drawer.Screen name="Home" component={HomeScreen} />
                 {/* <Drawer.Screen name="AddAccount" component={BottomTabNavigation} />
                 <Drawer.Screen name="WhatsNew" component={BottomTabNavigation} />
                 <Drawer.Screen name="ListeningHistory" component={BottomTabNavigation} />
                 <Drawer.Screen name="SettingsAndPrivacy" component={BottomTabNavigation} /> */}
             </Drawer.Navigator>
+        </NavigationContainer>
     )
 }
 

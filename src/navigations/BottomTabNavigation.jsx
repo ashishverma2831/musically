@@ -23,12 +23,9 @@ const BottomTabNavigation = () => {
                 activeColor="white"
                 inactiveColor="#535353"
                 inactiveBackgroundColor="#212121"
-                barStyle={{ backgroundColor: '#212121',opacity:0.8 }}
-                screenOptions={{
-                    headerShown: false,
-                }}
+                barStyle={{ backgroundColor: '#001822',opacity:0.8 }}
             >
-                <Tab.Screen name="Home" component={DrawerNavigation} 
+                <Tab.Screen name="Home" component={HomeScreen} 
                     options={{
                         tabBarLabel: 'Home',
                         tabBarIcon: ({ color }) => (
@@ -36,7 +33,7 @@ const BottomTabNavigation = () => {
                         ),
                     }}
                 />
-                <Tab.Screen name="Search" component={DrawerNavigation}
+                <Tab.Screen name="Search" component={SearchScreen}
                     options={{
                         tabBarLabel: 'Search',
                         tabBarIcon: ({ color }) => (
@@ -44,7 +41,7 @@ const BottomTabNavigation = () => {
                         ),
                     }}
                 />
-                <Tab.Screen name="Library" component={DrawerNavigation}
+                <Tab.Screen name="Library" component={LibraryScreen}
                     options={{
                         tabBarLabel: 'Library',
                         tabBarIcon: ({ color }) => (
@@ -52,7 +49,7 @@ const BottomTabNavigation = () => {
                         ),
                     }}
                 />
-                <Tab.Screen name="Premium" component={DrawerNavigation} 
+                <Tab.Screen name="Premium" component={Premium} 
                     options={{
                         tabBarLabel: 'Premium',
                         tabBarIcon: ({ color }) => (

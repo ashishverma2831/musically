@@ -11,6 +11,7 @@ const App = () => {
     <SafeAreaProvider>
       <View style={styles.container}>
         <BottomTabNavigation />
+        {/* <DrawerNavigation /> */}
       </View>
     </SafeAreaProvider>
   )
