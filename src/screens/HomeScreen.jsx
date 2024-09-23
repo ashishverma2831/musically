@@ -7,39 +7,52 @@ import getSongs from '../api/getSongs'
 import ArtistAlbums from '../components/ArtistAlbums'
 import Song from '../components/Song'
 import BottomTabNavigation from '../navigations/BottomTabNavigation'
+import { collection, getDocs, getFirestore } from 'firebase/firestore'
+import app from '../../firebaseConfig'
+
+const db = getFirestore(app);
 
 const HomeScreen = () => {
 
-  // const [songlist, setSonglist] = useState([]);
-  // const getSongs = async () => {
-  //   const url = 'https://youtube-music-api-yt.p.rapidapi.com/get-artist-songs?artistId=UCh6W-tvSImXZ8Gbz3pMNYxg';
-  //   const options = {
-  //     method: 'GET',
-  //     headers: {
-  //       'x-rapidapi-key': 'ddba72a05bmsh6bf38ece06aa542p1b5085jsnd329d52250e5',
-  //       'x-rapidapi-host': 'youtube-music-api-yt.p.rapidapi.com'
-  //     }
-  //   };
+  const [songlist, setSonglist] = useState([]);
+  const getSongs = async () => {
+    const ref = collection(db, 'musically');
+    const snapshot = await getDocs(ref);
 
-  //   try {
-  //     const response = await fetch(url, options);
-  //     const data = await response.json();
-  //     setSonglist(data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
+    const data = snapshot.docs.map(doc => doc.data());
+    console.log(data);
+    
+    setSonglist(data);
+  }
 
-  // useEffect(() => {
-  //   getSongs();
-  // }, []);  
+  useEffect(() => {
+    getSongs();
+  }, [])
 
   // console.log(songlist);
-
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
+
+        <View className='mb-8'>
+          <Text className='text-white text-2xl px-2 mb-4'>Songs for you</Text>
+          <ScrollView horizontal className='px-2 flex gap-x-2'>
+            {
+              songlist.map((song, index) => {
+                return (
+                  <View key={song.id} className='flex flex-col gap-1 w-36'>
+                    <Image className='h-36 w-36 rounded-xl' source={{ uri: 'https://cdn.britannica.com/66/251066-050-A318AF98/dakota-johnson-met-gala.jpg' }} />
+                    <Text className='text-md text-white truncate'>{song.song_title}</Text>
+                    <Text className='text-gray-400 text-sm' >dsmlgnlsdnglnwgl</Text>
+                  </View>
+                )
+              })
+            }
+          </ScrollView>
+        </View>
+
+
         <View className='mb-8'>
           <Text className='text-white text-2xl px-2 mb-4'>Episodes for you</Text>
           <ScrollView horizontal className='px-2 flex gap-x-2'>
