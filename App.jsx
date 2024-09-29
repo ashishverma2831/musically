@@ -5,13 +5,16 @@ import Register from './src/screens/Register'
 import BottomTabNavigation from './src/navigations/BottomTabNavigation'
 import StackNavigation from './src/navigations/StackNavigation'
 import DrawerNavigation from './src/navigations/DrawerNavigation'
+import { NavigationContainer } from '@react-navigation/native'
 
 const App = () => {
   return (
     <SafeAreaProvider>
       <View style={styles.container}>
-        <BottomTabNavigation />
-        {/* <DrawerNavigation /> */}
+        <NavigationContainer>
+          {/* <StackNavigation /> */}
+          <DrawerNavigation />
+        </NavigationContainer>
       </View>
     </SafeAreaProvider>
   )

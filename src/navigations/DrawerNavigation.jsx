@@ -14,23 +14,24 @@ const Drawer = createDrawerNavigator();
 
 const DrawerNavigation = () => {
     return (
-        <NavigationContainer>
-            <Drawer.Navigator screenOptions={{
-                headerShown: true,
-                drawerStyle: {
-                    backgroundColor: '#000',
-                    width: 240,
-                },
-                drawerActiveTintColor: 'white',
-                drawerInactiveTintColor: 'white',
-            }} >
-                <Drawer.Screen name="Home" component={HomeScreen} />
-                {/* <Drawer.Screen name="AddAccount" component={BottomTabNavigation} />
-                <Drawer.Screen name="WhatsNew" component={BottomTabNavigation} />
-                <Drawer.Screen name="ListeningHistory" component={BottomTabNavigation} />
-                <Drawer.Screen name="SettingsAndPrivacy" component={BottomTabNavigation} /> */}
+            <Drawer.Navigator
+                screenOptions={{
+                    headerShown: false,
+                    headerStyle: {
+                        backgroundColor: '#001822',
+                    },
+                    headerTintColor: '#fff',
+                }} >
+                <Drawer.Screen name="drawer_tab_1" component={BottomTabNavigation} 
+                    options={{
+                        title: 'Home',
+                    }}
+                />
+                <Drawer.Screen name="drawer_tab_2" component={BottomTabNavigation} />
+                <Drawer.Screen name="drawer_tab_3" component={BottomTabNavigation} />
+                <Drawer.Screen name="drawer_tab_4" component={BottomTabNavigation} />
+                <Drawer.Screen name="drawer_tab_5" component={BottomTabNavigation} />
             </Drawer.Navigator>
-        </NavigationContainer>
     )
 }
 

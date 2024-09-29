@@ -10,7 +10,7 @@ const SearchScreen = () => {
   const [searchQuery, setSearchQuery] = useState('')
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <Searchbar className='bg-gray-100 rounded-md mb-4' placeholder="What do you listen to...???" onChangeText={setSearchQuery} value={searchQuery} />
 
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -104,7 +104,7 @@ const SearchScreen = () => {
 
 
       </ScrollView>
-    </SafeAreaView>
+    </View>
   )
 }
 
@@ -115,6 +115,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#001822',
     justifyContent: 'center',
-    paddingHorizontal: 10,
+    padding: 20,
   },
 })

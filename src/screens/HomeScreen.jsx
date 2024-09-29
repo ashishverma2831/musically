@@ -9,10 +9,11 @@ import Song from '../components/Song'
 import BottomTabNavigation from '../navigations/BottomTabNavigation'
 import { collection, getDocs, getFirestore } from 'firebase/firestore'
 import app from '../../firebaseConfig'
+import { Button } from 'react-native-paper'
 
 const db = getFirestore(app);
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
 
   const [songlist, setSonglist] = useState([]);
   const getSongs = async () => {
@@ -32,20 +33,22 @@ const HomeScreen = () => {
   // console.log(songlist);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
+
+        {/* <Text className='text-white text-3xl font-bold px-2 my-4 text-center'>Musically</Text> */}
 
         <View className='mb-8'>
           <Text className='text-white text-2xl px-2 mb-4'>Songs for you</Text>
           <ScrollView horizontal className='px-2 flex gap-x-2'>
             {
-              songlist.map((song, index) => {
+              songlist && songlist.map((song, index) => {
                 return (
-                  <View key={song.id} className='flex flex-col gap-1 w-36'>
-                    <Image className='h-36 w-36 rounded-xl' source={{ uri: 'https://cdn.britannica.com/66/251066-050-A318AF98/dakota-johnson-met-gala.jpg' }} />
+                  <Pressable onPress={()=>navigation.navigate('MusicPlayer')}  key={index} className='flex flex-col gap-1 w-36'>
+                    <Image className='h-36 w-36 rounded-xl' source={{ uri: `${song.song_art_image_thumbnail_url}` }} />
                     <Text className='text-md text-white truncate'>{song.song_title}</Text>
-                    <Text className='text-gray-400 text-sm' >dsmlgnlsdnglnwgl</Text>
-                  </View>
+                    <Text className='text-gray-400 text-sm' >{song.song_artist}</Text>
+                  </Pressable>
                 )
               })
             }
@@ -294,7 +297,7 @@ const HomeScreen = () => {
         </View>
 
       </ScrollView>
-    </SafeAreaView>
+    </View>
   )
 }
 
@@ -305,6 +308,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#001822',
     justifyContent: 'center',
-    paddingHorizontal: 10,
+    padding: 10,
   },
 })

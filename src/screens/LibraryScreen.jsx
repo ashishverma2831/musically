@@ -6,8 +6,8 @@ import { Button, Icon, IconButton } from 'react-native-paper'
 
 const LibraryScreen = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <View className='flex flex-row mb-8 justify-between items-center bg-gray-800 px-2 py-10 shadow-xl rounded-xl'>
+    <View style={styles.container}>
+      <View className='flex flex-row mb-8 justify-between items-center bg-gray-800 py-6 shadow-xl rounded-xl'>
         <View className='flex flex-row items-center gap-2'>
           <Image style={{ height: 40, width: 40 }} className='rounded-full' source={{ uri: 'https://cdn.britannica.com/66/251066-050-A318AF98/dakota-johnson-met-gala.jpg' }} />
           <Text className='text-xl text-white font-bold'>Your Library</Text>
@@ -19,8 +19,8 @@ const LibraryScreen = () => {
         </View>
       </View>
 
-      <ScrollView className='p-2  bg-gray-800 flex flex-col gap-2' showsVerticalScrollIndicator={false}>
-        <View className='flex flex-row items-center bg-[#001822] rounded-lg '>
+      <ScrollView className='flex flex-col gap-y-3' showsVerticalScrollIndicator={false}>
+        <View className='flex mx-auto w-full flex-row items-center bg-[#001822] rounded-lg '>
           <Image style={{ height: 64, width: 64 }} source={{ uri: 'https://cdn.britannica.com/66/251066-050-A318AF98/dakota-johnson-met-gala.jpg' }} />
           <View className='flex flex-col ml-2 items-center justify-center'>
             <Text className='text-md text-white font-bold'>Your Library</Text>
@@ -77,7 +77,7 @@ const LibraryScreen = () => {
           </View>
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   )
 }
 
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#001822',
     justifyContent: 'center',
-    paddingHorizontal: 10,
+    padding: 20,
     display: 'flex',
     justifyContent: 'center',
   },
