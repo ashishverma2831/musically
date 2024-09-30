@@ -44,7 +44,9 @@ const HomeScreen = ({navigation}) => {
             {
               songlist && songlist.map((song, index) => {
                 return (
-                  <Pressable onPress={()=>navigation.navigate('MusicPlayer')}  key={index} className='flex flex-col gap-1 w-36'>
+                  <Pressable onPress={()=>navigation.navigate('MusicPlayer',{songlist:songlist,
+                    index:index 
+                  })} key={index} className='flex flex-col gap-1 w-36'>
                     <Image className='h-36 w-36 rounded-xl' source={{ uri: `${song.song_art_image_thumbnail_url}` }} />
                     <Text className='text-md text-white truncate'>{song.song_title}</Text>
                     <Text className='text-gray-400 text-sm' >{song.song_artist}</Text>
